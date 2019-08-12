@@ -1,0 +1,60 @@
+性能优化：
+
+1、将小图标打包成base64代码，或者使用雪碧图，或者使用字体包，减少请求
+2、H5图片使用媒体查询去适配两倍图、三倍图，避免全部使用三倍图
+3、图片进行无损压缩，图片过多时，图片懒加载。图片尺寸过大时，可将图片切分成几张图片，避免白屏时间过长
+4、发布新版本时，静态资源（如公共css、img等）不更新版本号，只更新经过打包之后的js、css等的版本号
+5、script标签引入的js，如果不是在首屏加载的时候需要用到，可以使用async和defer异步加载
+6、使用css3动画，尽量使用transform和opacity，避免卡顿
+7、nginx使用gzip压缩
+8、事件节流和事件防抖
+
+http状态码：
+
+304 资源没有改变，直接使用浏览器缓存
+401 没有权限
+413 文件过大
+405 请求方法不支持
+403 跨域
+502 网关错误
+504 网关超时
+
+
+学习链接：
+
+1、webpack     https://www.jianshu.com/p/42e11515c10f
+2、Parcel          https://juejin.im/post/5a38e100f265da4324809297
+3、雪碧图         https://segmentfault.com/a/1190000007686042
+4、koa2 cors跨域    https://www.jianshu.com/p/5b3acded5182
+5、http状态码  https://blog.51cto.com/461205160/1747524
+6、bfc             https://zhuanlan.zhihu.com/p/25321647
+7、mobx       https://juejin.im/entry/597619045188250d6b1248e6
+8、await/async  https://juejin.im/post/5af79983f265da0ba0633e04
+9、await/async  https://segmentfault.com/a/1190000007535316
+10、hybrid原理/jsbridge  https://juejin.im/post/5b4ff3bee51d4519721b9986
+       https://blog.ymfe.org/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84JSBridge/
+11、性能优化   https://juejin.im/post/59e1bbc9f265da430f311fb1
+12、input输入  https://juejin.im/post/5b8c90f6e51d4538bb478b4d
+13、web 安全   https://juejin.im/entry/5b4b56fd5188251b1a7b2ac1
+14、移动端适配 https://juejin.im/post/5cddf289f265da038f77696c
+15、前端历史   https://mbd.baidu.com/newspage/data/landingsuper?context=%7B%22nid%22%3A%22news_9952210201483178150%22%7D&n_type=0&p_from=1
+16、前端博客   http://shengxinjing.cn/
+17、vue插件    https://segmentfault.com/a/1190000012224638
+18、搭建vue环境  https://juejin.im/post/5cc55c336fb9a032086dd701#heading-8
+19、vue面试    https://juejin.im/post/5cf495e96fb9a07ef5622025
+20、vue响应式原理  https://juejin.im/post/5cf3cccee51d454fa33b1860
+21、vue现代模式  https://www.uis.cc/2018/06/29/What-is-Modern-mode-in-the-Vue-CLI-3-configuration/
+22、前端面试  https://github.com/xuwenqing2014/FE-Interview-Questions
+
+常用库：
+
+1、浏览器通知   https://github.com/Nickersoft/push.js
+2、图片预览     https://github.com/fengyuanchen/cropperjs
+3、axios       https://www.kancloud.cn/yunye/axios/234845
+4、userAgent  https://github.com/faisalman/ua-parser-js
+5、富文本编辑器  http://www.wangeditor.com/
+6、jsbridge    https://www.jianshu.com/p/68533c1acf83
+7、下拉刷新   https://github.com/mescroll/mescroll
+8、ppt           https://github.com/impress/impress.js/
+9、下载       http://danml.com/download.html
+10、加密解密  https://github.com/brix/crypto-js

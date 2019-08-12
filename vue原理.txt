@@ -1,0 +1,3 @@
+1、通过Object.defineProperty的set和get去劫持vue中的data的每一个属性，递归调用去遍历data中深层次的属性
+2、通过Compile编译器去编译html模板，编译的时候，会创建Watcher，Object.defineProperty的get方法被调用的时候，Wacher会被存放在Dep中
+3、data中每个属性，都会创建Dep实例去收集html中的依赖，当data的属性变化时，会调用Object.defineProperty的set方法，Dep再去通知所有的依赖更新数据

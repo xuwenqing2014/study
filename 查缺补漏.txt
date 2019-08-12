@@ -1,0 +1,7 @@
+1、this指向   bind call apply
+2、promise
+3、排序（冒泡、快排、选择） 时间复杂度
+4、proxy
+5、组件设计
+6、vue react生命周期 原理
+7、js执行机制
