@@ -45,7 +45,9 @@ http状态码：
 20、vue响应式原理  https://juejin.im/post/5cf3cccee51d454fa33b1860
 21、vue现代模式  https://www.uis.cc/2018/06/29/What-is-Modern-mode-in-the-Vue-CLI-3-configuration/
 22、前端面试  https://github.com/xuwenqing2014/FE-Interview-Questions
-
+	http://blog.poetries.top/FE-Interview-Questions/
+	https://www.cxymsg.com/
+	https://juejin.im/post/5d23e750f265da1b855c7bbe
 常用库：
 
 1、浏览器通知   https://github.com/Nickersoft/push.js
