@@ -35,6 +35,7 @@ http状态码：
        https://blog.ymfe.org/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84JSBridge/
 11、性能优化   https://juejin.im/post/59e1bbc9f265da430f311fb1
 12、input输入  https://juejin.im/post/5b8c90f6e51d4538bb478b4d
+	       https://juejin.im/post/5d6e1899e51d453b1e478b29
 13、web 安全   https://juejin.im/entry/5b4b56fd5188251b1a7b2ac1
 14、移动端适配 https://juejin.im/post/5cddf289f265da038f77696c
 15、前端历史   https://mbd.baidu.com/newspage/data/landingsuper?context=%7B%22nid%22%3A%22news_9952210201483178150%22%7D&n_type=0&p_from=1
@@ -42,21 +43,30 @@ http状态码：
 17、vue插件    https://segmentfault.com/a/1190000012224638
 18、搭建vue环境  https://juejin.im/post/5cc55c336fb9a032086dd701#heading-8
 19、vue面试    https://juejin.im/post/5cf495e96fb9a07ef5622025
+	       https://juejin.im/post/5d41eec26fb9a06ae439d29f
+	       https://juejin.im/post/5d9d386fe51d45784d3f8637#heading-60
+	       https://juejin.im/post/5cf495e96fb9a07ef5622025
 20、vue响应式原理  https://juejin.im/post/5cf3cccee51d454fa33b1860
 21、vue现代模式  https://www.uis.cc/2018/06/29/What-is-Modern-mode-in-the-Vue-CLI-3-configuration/
 22、前端面试  https://github.com/xuwenqing2014/FE-Interview-Questions
 	http://blog.poetries.top/FE-Interview-Questions/
 	https://www.cxymsg.com/
 	https://juejin.im/post/5d23e750f265da1b855c7bbe
+	
+23、学习文档  https://cloud.tencent.com/developer/devdocs
+24、输入格式化  https://nosir.github.io/cleave.js/
+25、常用正则  https://github.com/any86/any-rule
+
 常用库：
 
 1、浏览器通知   https://github.com/Nickersoft/push.js
 2、图片预览     https://github.com/fengyuanchen/cropperjs
 3、axios       https://www.kancloud.cn/yunye/axios/234845
 4、userAgent  https://github.com/faisalman/ua-parser-js
-5、富文本编辑器  http://www.wangeditor.com/
+5、富文本编辑器  http://www.wangeditor.com/  tinymce
 6、jsbridge    https://www.jianshu.com/p/68533c1acf83
 7、下拉刷新   https://github.com/mescroll/mescroll
 8、ppt           https://github.com/impress/impress.js/
 9、下载       http://danml.com/download.html
 10、加密解密  https://github.com/brix/crypto-js
+11、格式化input  https://nosir.github.io/cleave.js/
