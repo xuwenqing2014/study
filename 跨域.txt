@@ -1,0 +1,6 @@
+1、jsonp
+script标签的src属性没有跨域限制，可以获取json数据，动态创建script标签，src指向接口，并拼接个callback回调用来接收参数
+2、cors
+后端设置个Access-Control-Allow-Origin设置域名白名单，前端做请求的时候，会发送个options预检请求，用来判断当前域名是否在白名单之内
+3、nginx反向代理、node服务器代理
+搭建个代理服务器，接收前端请求，转发到跨域服务器中，因为服务器没有跨域限制

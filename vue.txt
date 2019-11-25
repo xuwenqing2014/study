@@ -1,0 +1,16 @@
+1、生命周期
+beforeCreate vue实例化之后，但实例中的data还不能访问
+created  data可以访问
+beforeMount 挂载dom之前
+mounted 挂载dom之后，可以访问到dom了
+beforeUpdate dom重新渲染之前
+updated dom重新渲染之后
+beforeDestory 组件销毁之前
+destoryed 组件销毁之后
+activited keep-alive 组件激活时
+deactivited keep-alive 组件停用时
+2、vuex
+（1）触发事件dispatch action到action里
+（2）在action里面处理异步，再commit到mutation中
+（3）在mutation中根据type执行对应的代码，改变state的数据
+（4）在组件中computed或者watch中监听state中的数据

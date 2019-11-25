@@ -1,0 +1,23 @@
+1、display: flex; 
+flex-direction: column/row; // flex的方向
+align-items: center; // 垂直居中
+justify-content: center; // 水平居中
+2、transition
+transition-property // 属性名
+transition-timing-function //速度曲线
+transition-duration // 动画时间
+transition-delay //动画延迟时间
+3、animation
+animation-name // 动画名
+animation-timing-function: ease-in/ease-out/ease-in-out/linear // 动画速度曲线
+animation-iteration-count: n/infinite // 次数
+animation-direction: alternate/normal 动画是否反向播放
+animation-fill-mode: forwards/backwards/both 动画在开始或者结束是否可见
+animation-play-state: running/paused // 动画暂停或者运动
+4、盒模型
+w3c盒模型  content = width
+ie盒模型      content + padding + border = width;
+改变盒模型 box-sizing: border-box/content-box
+5、清除浮动
+父元素overflow:hidden
+万能清除浮动法，添加伪类after{clear:both;}

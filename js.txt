@@ -1,0 +1,19 @@
+1、call bind apply
+都可以改变函数this的指向
+call的参数是flat的
+apply的参数是一个数组
+call和apply会立即执行函数
+bind只会改变this指向，并不会执行
+2、闭包
+一般来讲函数在执行完毕了之后，是会释放内存，销毁变量的，但是如果函数里面还有函数，外层函数的变量不会被回收释放，子函数还可以使用父函数中的变量。
+用处是：使变量不销毁，还可以使用
+3、get和post的区别
+get一般用来获取数据，post一般用来发送数据
+get的参数是拼接在url上的，post的参数是放在body里的
+4、H5的兼容性问题
+（1）300ms延时 fastclick
+（2）ios 12以上，弹出键盘之后，收起键盘，页面不回弹，document.body.scrollTop = document.body.scrollTop;
+（3）android中，line-height=height，文字不垂直居中，使用display: flex; justify-content: center;
+5、作用域
+全局作用域、函数作用域
+es6 块级作用域

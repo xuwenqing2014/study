@@ -1,0 +1,12 @@
+1、bfc，block formatting context ，块级格式化上下文，就是让文档隔绝出一段不受外部影响，也不影响外部的文档块，比较常见的就是，清除浮动
+2、清除浮动有哪几种方法
+1）父元素设置高度
+2）父元素overflow:hidden
+3）万能清除法，添加伪类
+.clearfix:before{
+content: '';
+height: 0;
+visibility: hidden;
+clear: both;
+display: block;
+}
