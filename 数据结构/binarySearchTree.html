@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 二叉搜索树
+        const BinarySearchTree = (function () {
+            class Node {
+                constructor(key) {
+                    this.left = null;
+                    this.right = null;
+                    this.key = key;
+                }
+            }
+            class BinarySearchTree {
+
+                constructor() {
+                    this.root = null;
+                }
+                insert(key) {
+                    let node = new Node(key);
+                    if (this.root) {
+                        this.insertNode(this.root, node);
+                    } else {
+                        this.root = node;
+                    }
+                }
+                insertNode(node, newNode) {
+                    if (node.key > newNode.key) {
+                        if (node.left !== null) {
+                            this.insertNode(node.left, newNode);
+                        } else {
+                            node.left = newNode;
+                        }
+                    } else {
+                        if (node.right !== null) {
+                            this.insertNode(node.right, newNode);
+                        } else {
+                            node.right = newNode;
+                        }
+                    }
+                }
+                showAll() {
+                    return this.root;
+                }
+                inOrderNode(cb) {
+                    this.inOrderNodeFn(this.root, cb);
+                }
+                inOrderNodeFn(node, cb) {
+                    if (node) {
+                        this.inOrderNodeFn(node.left, cb);
+                        cb(node.key);
+                        this.inOrderNodeFn(node.right, cb);
+                    }
+                }
+                min() {
+                    let node = this.root;
+                    while (node) {
+                        if (node.left) {
+                            node = node.left;
+                        } else {
+                            return node.key;
+                        }
+                    }
+                    return null;
+                }
+                max() {
+                    let node = this.root;
+                    while (node) {
+                        if (node.right) {
+                            node = node.right;
+                        } else {
+                            return node.key;
+                        }
+                    }
+                    return null;
+                }
+                search(key) {
+                    return this.searchNode(this.root, key);
+                }
+                searchNode(node, key) {
+                    if (key > node.key) {
+                        if (node.right !== null) {
+                            return this.searchNode(node.right, key);
+                        } else {
+                            return false;
+                        }
+                    } else if (key < node.key) {
+                        if (node.left !== null) {
+                            return this.searchNode(node.left, key);
+                        } else {
+                            return false;
+                        }
+                    } else {
+                        return true;
+                    }
+                }
+            }
+            return BinarySearchTree;
+        })();
+        const binarySearchTree = new BinarySearchTree();
+        binarySearchTree.insert(12);
+        binarySearchTree.insert(1);
+        binarySearchTree.insert(2);
+        binarySearchTree.insert(124);
+        binarySearchTree.insert(125);
+        binarySearchTree.insert(87);
+        console.log(binarySearchTree.showAll());
+        binarySearchTree.inOrderNode((key) => {
+            console.log(key)
+        });
+        console.log(binarySearchTree.search(124))
+    </script>
+</body>
+
+</html>

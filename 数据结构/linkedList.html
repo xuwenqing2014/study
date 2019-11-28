@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 链表
+        const LinkedList = (function () {
+            class Node {
+                constructor(element) {
+                    this.element = element;
+                    this.next = null;
+                }
+            }
+            const head = new WeakMap();
+            const length = new WeakMap();
+            class LinkedList {
+                constructor() {
+                    head.set(this, null);
+                    length.set(this, 0);
+                }
+                // 追加在最后
+                append(element) {
+                    if (this.getLength() === 0) {
+                        head.set(this, new Node(element));
+                    } else {
+                        let current = this.getHead();
+                        while (current.next) {
+                            current = current.next;
+                        }
+                        current.next = new Node(element);
+                    }
+                    const l = this.getLength() + 1;
+                    length.set(this, l);
+                }
+                // 插入到链表的某一位置
+                insert(position, element) {
+                    if (position >= 0 && position < this.getLength()) {
+                        let current = this.getHead();
+                        let previous;
+                        if (this.getLength() === 0) {
+                            head.set(this, new Node(element));
+                        } else if (position === 0) {
+                            const node = new Node(element);
+                            const next = this.getHead();
+                            node.next = next;
+                            head.set(this, node);
+                        } else {
+                            let i = 0;
+                            while (current) {
+                                if (i === position) {
+                                    const next = previous.next;
+                                    current = new Node(element);
+                                    previous.next = current;
+                                    current.next = next;
+                                    break;
+                                }
+                                i++;
+                                previous = current;
+                                current = current.next;
+                            }
+                        }
+                        const l = this.getLength() + 1;
+                        length.set(this, l);
+                    } else {
+                        return false;
+                    }
+                }
+                // 移除某一位置上的节点
+                removeAt(position) {
+                    if (position >= 0 && position < this.getLength()) {
+                        if (position === 0) {
+                            head.set(this, this.getHead().next);
+                        } else {
+                            let current = this.getHead();
+                            let previous;
+                            let i = 0;
+                            while (current) {
+                                if (i === position) {
+                                    previous.next = current.next;
+                                    return current;
+                                }
+                                i++;
+                                previous = current;
+                                current = current.next;
+                            }
+                        }
+                        const l = this.getLength() - 1;
+                        length.set(this, l);
+                    } else {
+                        return null;
+                    }
+                }
+                // 移除某元素
+                remove(element) {
+                    const position = this.indexOf(element);
+                    this.removeAt(position);
+                }
+                // 寻找某节点
+                indexOf(element) {
+                    let current = this.getHead();
+                    let i = 0;
+                    while (current) {
+                        if (current.element === element) {
+                            return i;
+                            break;
+                        }
+                        i++;
+                        current = current.next;
+                    }
+                    return -1;
+                }
+                getHead() {
+                    return head.get(this);
+                }
+                getLength() {
+                    return length.get(this);
+                }
+            }
+            return LinkedList;
+        })();
+
+        const linkedList = new LinkedList();
+        linkedList.append(1);
+        linkedList.append(3);
+        linkedList.insert(1, 2)
+        linkedList.insert(0, 0)
+        linkedList.remove(2)
+        console.log(linkedList.getHead())
+    </script>
+</body>
+
+</html>

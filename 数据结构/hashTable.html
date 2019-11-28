@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 哈希表
+        class HashTable {
+            constructor(size) {
+                this.size = size;
+                this.table = [];
+            }
+            // 哈希算法
+            hash(data) {
+                let total = 0;
+                for (let i = 0; i < data.length; i++) {
+                    total += data.charCodeAt(i);
+                }
+                return total % this.size;
+            }
+            insert(key, value) {
+                this.table[this.hash(key)] = value;
+            }
+            get(key) {
+                return this.table[this.hash(key)];
+            }
+            remove(key) {
+                const value = this.table[this.hash(key)];
+                this.table[this.hash(key)] = null;
+                return value;
+            }
+            showAll() {
+                return this.table;
+            }
+        }
+        const hashTable = new HashTable(100);
+        hashTable.insert('a', 1);
+        hashTable.insert('b', 2);
+        hashTable.insert('bbbb', 4);
+        hashTable.insert('bbb', 5);
+        console.log(hashTable.showAll())
+    </script>
+</body>
+
+</html>

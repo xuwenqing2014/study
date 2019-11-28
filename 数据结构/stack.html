@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 栈
+        class Stack{
+            constructor() {
+                this.items = [];
+            }
+            push(value) {
+                this.items.push(value);
+            }
+            pop() {
+                return this.items.pop();
+            }
+            isEmpty() {
+                return this.items.length === 0;
+            }
+            getLength() {
+                return this.items.length;
+            }
+            peek() {
+                return this.items.length > 0 ? this.items[this.items.length - 1] : null;
+            }
+        }
+        var stack = new Stack();
+        stack.push('aaa');
+        console.log(stack.peek());
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const Queue = (function () {
+            const items = new WeakMap();
+            class Queue {
+                constructor() {
+                    items.set(this, []);
+                }
+                getItems() {
+                    return items.get(this);
+                }
+                enqueue(element) {
+                    this.getItems().push(element);
+                }
+                dequeue() {
+                    return this.getItems().shift();
+                }
+                front() {
+                    return this.getItems().length > 0 ? this.getItems()[0] : null;
+                }
+                isEmpty() {
+                    return this.getItems().length === 0;
+                }
+                clear() {
+                    this.getItems() = [];
+                }
+                size() {
+                    return this.getItems.length;
+                }
+            }
+            return Queue;
+        })();
+        // 循环队列，击鼓传花
+        function hotPotato(list, num) {
+            let queue = new Queue();
+            list.forEach(item => {
+                queue.enqueue(item);
+            });
+            while (queue.size() > 1) {
+                for (let i = 0; i < num; i++) {
+                    queue.enqueue(queue.dequeue());
+                }
+                queue.dequeue();
+            }
+            return queue.dequeue();
+        }
+        let list = ['John', 'Jack', 'Camila', 'Ingrid', 'Carl'];
+        console.log(hotPotato(list, 3))
+
+
+
+
+        // 优先队列
+        // const PriorityQueue = (function () {
+        //     const items = new WeakMap();
+        //     class QueueElement {
+        //         constructor(element, prority) {
+        //             this.element = element;
+        //             this.prority = prority;
+        //         }
+        //     }
+        //     class PriorityQueue {
+        //         constructor() {
+        //             items.set(this, []);
+        //         }
+        //         getItems() {
+        //             return items.get(this);
+        //         }
+        //         enqueue(element, prority) {
+        //             const queueElement = new QueueElement(element, prority);
+        //             let flag = true;
+        //             for (let i = 0; i < this.getItems().length; i++) {
+        //                 // 数字越小，优先级越高
+        //                 if (queueElement.prority < this.getItems()[i].prority) {
+        //                     this.getItems().splice(i, 0, queueElement);
+        //                     flag = false;
+        //                     break;
+        //                 }
+        //             }
+        //             if (flag) {
+        //                 this.getItems().push(queueElement);
+        //             }
+        //             console.log(this.getItems())
+        //         }
+        //         dequeue() {
+        //             return this.getItems().shift();
+        //         }
+        //         front() {
+        //             return this.getItems().length > 0 ? this.getItems()[0] : null;
+        //         }
+        //         isEmpty() {
+        //             return this.getItems().length === 0;
+        //         }
+        //         clear() {
+        //             this.getItems() = [];
+        //         }
+        //     }
+        //     return PriorityQueue;
+        // })();
+        // const queue = new PriorityQueue();
+        // queue.enqueue('aaa', 10);
+        // queue.enqueue('bbb', 11);
+        // queue.enqueue('ccc', 1);
+        // console.log(queue.front())
+    </script>
+</body>
+
+</html>
