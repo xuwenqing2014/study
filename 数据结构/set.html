@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 集合
+        const MySet = (function(){
+            const items = new WeakMap();
+            class MySet{
+                constructor() {
+                    items.set(this, {});
+                }
+                getItems() {
+                    return items.get(this);
+                }
+                add(value) {
+                    if (!this.getItems()[value]) {
+                        this.getItems()[value] = value;
+                        return true;
+                    }
+                    return false;
+                }
+                delete(value) {
+                    if (!this.getItems()[value]) {
+                        delete this.getItems()[value];
+                        return true;
+                    }
+                    return false;
+                }
+                has(value) {
+                    return this.getItems().hasOwnProperty(value);
+                }
+                values() {
+                    return Object.values(this.getItems());
+                }
+                keys() {
+                    return Object.keys(this.getItems());
+                }
+                size() {
+                    return Object.keys(this.getItems()).length;
+                }
+                // 并集
+                intersection(otherSet) {
+                    const otherValues = otherSet.values();
+                    const newSet = new MySet();
+                    [...otherValues, ...this.values()].forEach(item => {
+                        newSet.add(item);
+                    });
+                    return newSet;
+                }
+                // 交集
+                unoin(otherSet) {
+                    const otherValues = otherSet.values();
+                    const newSet = new MySet();
+                    otherValues.forEach(other => {
+                        for(let item of this.values()) {
+                            if (other === item) {
+                                newSet.add(item);
+                                break;
+                            }
+                        }
+                    });
+                    return newSet;
+                }
+                different(otherSet) {
+                    const otherSet = otherSet.values();
+                    const newSet = new MySet();
+                    otherSet.forEach(other => {
+                        if (this.values().findIndex(item => item === other) < 0) {
+                            newSet.add(other);
+                        }
+                    });
+                    return newSet;
+                }
+            }
+        })();
+    </script>
+</body>
+</html>
