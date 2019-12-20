@@ -1,0 +1,9 @@
+1、let const
+2、箭头函数
+3、解构赋值
+4、模板字符串
+5、函数参数默认值
+6、promise generator
+7、class
+8、模块化
+9、新的数据结构 Map WeakMap Set WeakSet

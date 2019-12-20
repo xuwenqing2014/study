@@ -14,3 +14,12 @@ deactivited keep-alive 组件停用时
 （2）在action里面处理异步，再commit到mutation中
 （3）在mutation中根据type执行对应的代码，改变state的数据
 （4）在组件中computed或者watch中监听state中的数据
+3、父子组件生命周期
+父组件beforecreate
+父组件created
+父组件beforemount
+子组件beforecreate
+子组件created
+子组件beforemount
+子组件mounted
+父组件mounted
