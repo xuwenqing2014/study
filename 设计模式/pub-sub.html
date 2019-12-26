@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 发布订阅模式
+        class Event {
+            constructor() {
+                this.callback = {};
+            }
+            $on(name, fn) {
+                if (!this.callback[name]) {
+                    this.callback[name] = [];
+                }
+                this.callback[name].push(fn);
+            }
+            $emit(name, args) {
+                if (this.callback[name]) {
+                    this.callback[name].forEach(fn => fn(args));
+                }
+            }
+            $off(name) {
+                this.callback[name] = null;
+            }
+        }
+        var event = new Event();
+        event.$on('event1', function (value) {
+            console.log(value);
+        });
+        event.$on('event1', function (value) {
+            console.log(value);
+        });
+        event.$on('event2', function (value) {
+            console.log(value);
+        });
+        event.$emit('event1', 111);
+        event.$emit('event2', 222);
+    </script>
+</body>
+
+</html>

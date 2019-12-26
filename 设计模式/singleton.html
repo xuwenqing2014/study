@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 单例模式（包含闭包储存变量）
+        const singleTon = (function() {
+            let instance = null;
+            const Temp = function () {
+                this.name = 'aaa';
+            };
+            return function() {
+                if (!instance) {
+                    instance = new Temp();
+                }
+                return instance;
+            }
+        })();
+        var d = new singleTon();
+        var e = new singleTon();
+        console.log(d === e);
+        // 单例模式（静态属性储存变量）
+        class SingleTon{
+            static getInstance() {
+                if (!SingleTon.instance) {
+                    SingleTon.instance = new SingleTon();
+                }
+                return SingleTon.instance;
+            }
+        }
+        var a = SingleTon.getInstance();
+        var b = SingleTon.getInstance();
+        console.log(a === b)
+    </script>
+</body>
+</html>

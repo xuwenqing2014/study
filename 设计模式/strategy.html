@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 策略模式
+        // 策略模式，是为了将算法的实现和算法的使用分离
+        const strategies = {
+            S: function(salary) {
+                return salary * 3;
+            },
+            A: function(salary) {
+                return salary * 2;
+            },
+            B: function(salary) {
+                return salary * 1;
+            }
+        };
+        const calculateBouns = function (level, salary){
+            return strategies[level](salary);
+        };
+        console.log(calculateBouns('S', 1000))
+    </script>
+</body>
+
+</html>
