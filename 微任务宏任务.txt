@@ -1,5 +1,5 @@
 1、setTimeout setInterval ajax是宏任务
-2、new  Promise()中的函数是同步的，then中的函数是微任务
+2、new  Promise()中的函数是同步的，then中的函数是微任务，mutationObserver是微任务，用来监听dom变化完成
 3、先执行同步，再执行微任务，最后执行宏任务
 4、微任务可以插队，后定义的微任务先执行
 5、await async中，await 函数后面的内容全是属于then函数里的，也就是微任务
