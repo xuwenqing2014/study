@@ -17,3 +17,10 @@ get的参数是拼接在url上的，post的参数是放在body里的
 5、作用域
 全局作用域、函数作用域
 es6 块级作用域
+6、promise、generator、async/await有什么区别和联系
+promise解决了回调地狱的问题，但是还是存在链式调用的问题，generator是一个生成器，对是promise的语法糖，分步执行，需要使用next，
+async/await是generator的语法糖，自带执行器，不需要调用next方法，也解决了promise链式调用的问题
+7、箭头函数和普通函数有什么区别
+1）箭头函数不能作为构造函数，因为其里面的this指向不一样
+2）箭头函数的this指向它的上下文，改变不了this指向，而普通函数指向函数的调用对象
+3）箭头函数没有arguments，但是可以用es6的...arg
