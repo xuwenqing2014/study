@@ -1,0 +1,15 @@
+1、cookie
+cookie是前端用来存储数据的，服务端获取前端cookie，必须在同一域名下
+2、session
+session是服务端用来存储数据的，用来记录前后端会话
+3、cookie+session实现登陆持久化
+前后端需要同域名，用户的登陆信息需要存储session
+4、token+session
+前后端可以不同域名，用户的登陆信息需要存储session
+4、jwt
+jwt是一种标准化的前后端交互的token机制，由三部分组成header、payload、signature三部分组成，三个json数据加密后用.拼接
+header携带了签名算法，payload携带了用户信息（敏感信息不建议放在里面），signature由header、payload、签名私钥加密而成，为了防止篡改
+
+jwt与token不同的地方
+1、jwt不需要服务端保存用户登陆状态，信息由客户端保存，而token需要
+2、token可以删除通过服务端的存储让token失效，jwt则会一直有效，让其失效的方法可以是注销账号的时候，将jwt存起来用来判断是否失效
