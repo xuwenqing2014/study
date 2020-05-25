@@ -1,0 +1,26 @@
+1、怎么理解标签语义化
+2、HTML5新增了哪些标签
+3、HTML5除了新增了这些标签，还新增了哪些API
+4、针对HTML5的新API一个一个问问，比如web Worker、service worker、pwa、localstorage这些
+5、localstorage和cookie的区别
+6、说到cookie，前端怎么做到的登录有状态，什么是jwt
+7、讲讲http缓存，协商缓存和强制缓存，具体里面有哪些内容，以及目前你们公司的http缓存的方案是什么
+8、解决跨域的方式有哪些，比如jsonp、proxy、nginx反向代理、cors，具体问里面是怎么实现的，为什么可以解决跨域
+9、es6新增哪些API，你用过哪些
+10、promise、generator、await async 的区别与联系
+11、双向绑定的原理是什么？简单实现个双向绑定
+12、vue2响应式原理是什么？
+13、vue3响应式原理有什么变化？为什么要改成proxy去实现？
+14、vue组件之间数据传递有哪些方式
+15、简述vuex的数据流的走向，以及里面有哪些概念
+16、vue-router有哪几种模式，hash和history模式有什么区别，原理是什么？
+17、有写过哪些vue/react组件，简述要实现个弹窗dialog组件有什么想法，有什么设计思路，会用到哪些知识点？
+18、vue中的v-for和react中的map去做视图循环的时候，要设置key，这个key有什么用处
+19、vue中的$nextTick是怎么实现的
+20、讲讲react hooks
+21、react的受控组件和非受控组件有什么区别
+22、css3中的两种动画，transition和animation这两个的适用场景是什么
+23、最近有学什么新技术，大概讲讲
+24、手写冒泡排序
+25、数组去重有哪些方式
+26、如果简历写了熟悉数据结构的话，就问问链表、哈希表、二叉树这些
