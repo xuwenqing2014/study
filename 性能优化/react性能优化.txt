@@ -1,0 +1,3 @@
+1、使用pureComponent（class组件）、React.memo（函数组件）和shouldComponentUpdate去优化组件的更新渲染性能
+2、使用React.lazy和suspense去懒加载，拆分组件的包
+3、为组件创建错误边界
