@@ -25,7 +25,7 @@
         // }
         // console.log(bubbleSort([1,3,2,4,5,6,3,4,2,1]));
 
-        // 选择排序
+        // 选择排序 O(n2)
         // function selectionSort(arr) {
         //     for(let i=0;i<arr.length;i++) {
         //         let maxIndex = i;
@@ -42,7 +42,7 @@
         // }
         // console.log(selectionSort([1,3,2,4,5,6,3,4,2,1]));
 
-        // 插入排序
+        // 插入排序 O(n2)
         // function insertSort(arr) {
         //     let inner;
         //     let temp;
@@ -59,7 +59,26 @@
         // }
         // console.log(insertSort([1,3,2,4,5,6,3,4,2,1]));
 
-        // // 快速排序
+        // // 希尔排序 O(nlogn)
+        // function shellSort(arr) {
+        //     let gap = Math.floor(arr.length / 2);
+        //     while (gap > 0) {
+        //         for (let i = gap; i < arr.length; i++) {
+        //             let j = i;
+        //             let temp = arr[i];
+        //             while (j > 0 && arr[j - gap] > temp) {
+        //                 arr[j] = arr[j - gap];
+        //                 j -= gap;
+        //             }
+        //             arr[j] = temp;
+        //         }
+        //         gap = Math.floor(gap / 2);
+        //     }
+        //     return arr;
+        // }
+        // console.log(shellSort([1, 3, 1, 2, 3, 4, 5, 6, 7, 2, 3, 4, 5, 32, 4]))
+
+        // // 快速排序 O(nlogn)
         // function quickSort(arr) {
         //     if (arr.length === 0) {
         //         return [];
@@ -78,6 +97,39 @@
         // }
         // console.log(quickSort([1,3,2,4,5,6,3,4,2,1]));
 
+        // 归并排序 O(nlogn)
+        // function merger(a, b) {
+        //     let aLength = a.length;
+        //     let bLength = b.length;
+        //     let arr = [];
+        //     let i = 0;
+        //     let j = 0;
+        //     while (i < aLength && j < bLength) {
+        //         if (a[i] < b[j]) {
+        //             arr.push(a[i++]);
+        //         } else {
+        //             arr.push(b[j++]);
+        //         }
+        //     }
+        //     while (i < aLength) {
+        //         arr.push(a[i++]);
+        //     }
+        //     while (j < bLength) {
+        //         arr.push(b[j++]);
+        //     }
+        //     return arr;
+        // }
+        // function mergeSort(arr) {
+        //     if (arr.length === 1) {
+        //         return arr;
+        //     }
+        //     let mid = Math.floor(arr.length / 2);
+        //     let leftArr = arr.slice(0, mid);
+        //     let rightArr = arr.slice(mid);
+        //     return merger(mergeSort(leftArr), mergeSort(rightArr));
+        // }
+
+
         // // 二分查找
         // function binarySearch(arr, value) {
         //     let start = 0;
@@ -92,9 +144,10 @@
         //             return mid;
         //         }
         //     }
-        //     return -1
+        //     return -1;
         // }
         // console.log(binarySearch(quickSort([1,3,2,4,5,6,3,4,2,1]), 5));
+
     </script>
 </body>
 
